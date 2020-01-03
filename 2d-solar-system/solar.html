@@ -1,0 +1,289 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        body {
+            background: linear-gradient(to right, #222 0%, #999 100%);
+            zoom: .7;
+        }
+        .container {
+            position: relative;
+            height: 800px;
+            width: 100%;
+            margin: 0 auto;
+            perspective: 1000px;
+            transform-style: preserve-3d;
+            padding-top: 50px;
+        }
+        .sun {
+            position: absolute;
+            z-index: 10;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%,-50%);
+            height: 50px;
+            width: 50px;
+            border-radius: 50%;
+            background:radial-gradient(ellipse at center, #ffd000 1%,#f9b700 39%,#f9b700 39%,#e06317 100%);
+            box-shadow: 0 0 12px white;
+            transform-style: preserve-3d;
+
+        }
+        .mercury {
+            position: absolute;
+            top: -50%;
+            left: -50%;
+            transform: translate(-50%,-50%);
+            height: 100px;
+            width: 100px;
+            border: 0.4px solid #ccc;
+            border-radius: 50%;
+            animation: cycle 6s linear infinite;
+        }
+        .mercury::before {
+            position: absolute;
+            top: 12px;
+            left: 11px;
+            content: "";
+            display: block;
+            height: 6px;
+            width: 6px;
+            background-color: #ccc;
+            border-radius: 50%;
+        }
+        @keyframes cycle {
+            0% {transform: rotateZ(0)}
+            100% { transform: rotateZ(360deg)
+            }
+        }
+        @keyframes self-cycle {
+            0% { transform: rotateZ(0) }
+            100%{ transform: rotateZ(-360deg)}
+        }
+        .venus {
+            position: absolute;
+            top: -100%;
+            left: -100%;
+            transform: translate(-50%, -50%) rotateX(20deg);
+            height: 150px;
+            width: 150px;
+            border: 0.4px solid #fff;
+            border-radius: 50%;
+            animation: cycle 10s linear infinite;
+        }
+        .venus::before {
+            position: absolute;
+            top: 17px;
+            left: 17px;
+            content: "";
+            display: block;
+            height: 10px;
+            width: 10px;
+            background-color: goldenrod;
+            border-radius: 50%;
+        }
+        .earth {
+            position: absolute;
+            top: -150%;
+            left: -150%;
+            transform: translate(-50%, -50%) rotateX(20deg);
+            height: 200px;
+            width: 200px;
+            border: 0.4px solid #ccc;
+            border-radius: 50%;
+            animation: cycle 20s linear infinite;
+        }
+        .earth-1 {
+            position: absolute;
+            top: 24px;
+            left: 24px;
+            display: block;
+            height: 10px;
+            width: 10px;
+            background-color: forestgreen;
+            border-radius: 50%;
+            animation: cycle 3s linear infinite;
+        }
+        .earth-1::after {
+            position: absolute;
+            top: 10px;
+            left: 10px;
+            content: "";
+            display: block;
+            height: 5px;
+            width: 5px;
+            background-color: #fff;
+            border-radius: 50%;
+        }
+        .mar {
+            position: absolute;
+            top: -200%;
+            left: -200%;
+            transform: translate(-50%, -50%) rotateX(20deg);
+            height: 250px;
+            width: 250px;
+            border: 0.4px solid #fff;
+            border-radius: 50%;
+            animation: cycle 40s linear infinite;
+        }
+        .mar::before {
+            position: absolute;
+            top: 35px;
+            left: 30px;
+            content: "";
+            display: block;
+            height: 7px;
+            width: 7px;
+            background-color: orange;
+            border-radius: 50%;
+        }
+
+        .jupiter {
+            position: absolute;
+            top: -350%;
+            left: -350%;
+            transform: translate(-50%, -50%) rotateX(20deg);
+            height: 400px;
+            width: 400px;
+            border: 0.4px solid #fff;
+            border-radius: 50%;
+            animation: cycle 80s linear infinite;
+        }
+        .jupiter::before {
+            position: absolute;
+            top: 60px;
+            left: 30px;
+            content: "";
+            display: block;
+            height: 30px;
+            width: 30px;
+            background: linear-gradient(to right, white 0%, yellow 5%, orange 10%, orangered 50%, coral 70%, lightcoral 90%, darkorange 100%);
+            border-radius: 50%;
+        }
+        .saturn {
+            position: absolute;
+            top: -450%;
+            left: -450%;
+            transform: translate(-50%, -50%) rotateX(20deg);
+            height: 500px;
+            width: 500px;
+            border: 0.4px solid #fff;
+            border-radius: 50%;
+            animation: cycle 120s linear infinite;
+        }
+        .saturn::after {
+            position: absolute;
+            top: 108px;
+            left: 19px;
+            content: "";
+            display: block;
+            border: 5px solid #fff;
+            height: 8px;
+            width: 30px;
+            background-color: transparent;
+            border-radius: 73%;
+            opacity: 0.5;
+            border-top: none;
+            animation: self-cycle 120s linear infinite;
+        }
+        .saturn::before {
+            position: absolute;
+            top: 105px;
+            left: 29px;
+            content: "";
+            display: block;
+            height: 20px;
+            width: 20px;
+            background-color: saddlebrown;
+            border-radius: 50%;
+        }
+
+        .uranus {
+            position: absolute;
+            top: -550%;
+            left: -550%;
+            transform: translate(-50%, -50%) rotateX(20deg);
+            height: 600px;
+            width: 600px;
+            border: 0.4px solid #fff;
+            border-radius: 50%;
+            animation: cycle 240s linear infinite;
+        }
+        .uranus::before {
+            position: absolute;
+            top: 85px;
+            left: 80px;
+            content: "";
+            display: block;
+            height: 10px;
+            width: 10px;
+            background-color: lightblue;
+            border-radius: 50%;
+        }
+        .neptune {
+            position: absolute;
+            top: -650%;
+            left: -650%;
+            transform: translate(-50%, -50%) rotateX(20deg);
+            height: 700px;
+            width: 700px;
+            border: 0.4px solid #fff;
+            border-radius: 50%;
+            animation: cycle 300s linear infinite;
+        }
+        .neptune::before {
+            position: absolute;
+            top: 108px;
+            left: 87px;
+            content: "";
+            display: block;
+            height: 10px;
+            width: 10px;
+            background-color: snow;
+            border-radius: 50%;
+        }
+
+        .pluto {
+            position: absolute;
+            top: -750%;
+            left: -750%;
+            transform: translate(-50%, -50%) rotateX(20deg);
+            height: 800px;
+            width: 800px;
+            border: 0.4px solid #fff;
+            border-radius: 50%;
+            animation: cycle 365s linear infinite;
+        }
+        .pluto::before {
+            position: absolute;
+            top: 108px;
+            left: 117px;
+            content: "";
+            display: block;
+            height: 10px;
+            width: 10px;
+            background-color: deepskyblue;
+            border-radius: 50%;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+    <div class="sun">
+        <div class="mercury"></div>
+        <div class="venus"></div>
+        <div class="earth">
+            <div class="earth-1"></div>
+        </div>
+        <div class="mar"></div>
+        <div class="jupiter"></div>
+        <div class="saturn"></div>
+        <div class="uranus"></div>
+        <div class="neptune"></div>
+        <div class="pluto"></div>
+    </div>
+    </div>
+</body>
+</html>
