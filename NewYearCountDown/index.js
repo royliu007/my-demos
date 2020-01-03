@@ -1,5 +1,5 @@
 //获取2020年1月1日的时间戳
-let countDate = new Date('Jan 1, 2020 00:00:00').getTime();
+let countDate = new Date('Jan 1, 2021 00:00:00').getTime();
 
 function newYear() {
   let now = new Date().getTime()
